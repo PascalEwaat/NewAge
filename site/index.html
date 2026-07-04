@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NewAge — experimental web builds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        min-height: 100vh;
+        background: #f4f4f2;
+        background-image: radial-gradient(circle, #d9d9d6 1px, transparent 1px);
+        background-size: 26px 26px;
+        font-family: 'Inter', sans-serif;
+        color: #1f1e1c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      main { max-width: 560px; width: 100%; }
+      h1 {
+        font-family: 'Instrument Serif', serif;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 1.1;
+        margin-bottom: 8px;
+      }
+      .sub {
+        font-size: 14px;
+        color: #5a5955;
+        margin-bottom: 40px;
+      }
+      ul { list-style: none; }
+      li + li { margin-top: 16px; }
+      a.experiment {
+        display: block;
+        padding: 20px 24px;
+        border: 1px solid #1f1e1c;
+        border-radius: 16px;
+        text-decoration: none;
+        color: inherit;
+        background: #f4f4f2;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+      a.experiment:hover { background: #1f1e1c; color: #f4f4f2; }
+      a.experiment:hover .desc { color: #c9c8c4; }
+      .name {
+        font-family: 'Instrument Serif', serif;
+        font-size: 22px;
+      }
+      .desc {
+        font-size: 13px;
+        color: #5a5955;
+        margin-top: 4px;
+        transition: color 0.25s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>NewAge</h1>
+      <p class="sub">A lab for experimental web builds.</p>
+      <ul>
+        <li>
+          <a class="experiment" href="./image-spring/">
+            <span class="name">Image Spring</span>
+            <p class="desc">
+              Images rise from a spring in an inverted funnel and burst into
+              particles on click. WebGL, Three.js, GSAP.
+            </p>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
