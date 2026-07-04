@@ -4,11 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Spring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <div class="dots"></div>
     <canvas id="scene"></canvas>
+    <div class="overlay">
+      <h1 class="title">Stories that rise to the surface.</h1>
+      <aside class="aside">
+        <p>
+          A magazine in perpetual motion. New pieces surface from below, hold
+          their moment, and make way for the next.
+        </p>
+        <button id="cta" type="button">Read the latest</button>
+      </aside>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

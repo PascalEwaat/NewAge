@@ -24,3 +24,79 @@ html, body {
 
 #scene.ready { opacity: 1; }
 #scene.hovering { cursor: pointer; }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease 0.3s;
+}
+
+body.ready .overlay { opacity: 1; }
+
+.title {
+  position: absolute;
+  left: 40px;
+  bottom: 36px;
+  max-width: 340px;
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #1f1e1c;
+}
+
+.aside {
+  position: absolute;
+  right: 40px;
+  bottom: 36px;
+  max-width: 300px;
+  pointer-events: auto;
+}
+
+.aside p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5a5955;
+  margin-bottom: 16px;
+}
+
+#cta {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f1e1c;
+  background: transparent;
+  border: 1px solid #1f1e1c;
+  border-radius: 999px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+#cta:hover {
+  background: #1f1e1c;
+  color: #f4f4f2;
+}
+
+#cta:focus-visible {
+  outline: 2px solid #1f1e1c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .title {
+    left: 24px;
+    right: 24px;
+    bottom: 170px;
+    max-width: none;
+  }
+  .aside {
+    left: 24px;
+    right: 24px;
+    bottom: 28px;
+    max-width: none;
+  }
+}

@@ -40,6 +40,10 @@ async function init() {
   window.addEventListener('resize', () => resize(field));
 
   window.addEventListener('pointermove', (e) => {
+    if (e.target.closest('.overlay')) {
+      canvas.classList.remove('hovering');
+      return;
+    }
     pointerToNdc(e);
     raycaster.setFromCamera(pointer, camera);
     const hit = raycaster.intersectObjects(field.meshes())[0];
@@ -47,10 +51,19 @@ async function init() {
   });
 
   window.addEventListener('click', (e) => {
+    if (e.target.closest('.overlay')) return;
     pointerToNdc(e);
     raycaster.setFromCamera(pointer, camera);
     const hit = raycaster.intersectObjects(field.meshes())[0];
     if (hit) field.burst(hit.object.userData.item, hit.uv);
+  });
+
+  document.querySelector('#cta').addEventListener('click', () => {
+    const candidates = field.items.filter(
+      (i) => i.mesh.visible && i.progress > 0.15 && i.progress < 0.85
+    );
+    const item = candidates[Math.floor(Math.random() * candidates.length)];
+    if (item) field.burst(item, new THREE.Vector2(0.5, 0.5));
   });
 
   const clock = new THREE.Clock();
@@ -61,6 +74,7 @@ async function init() {
   });
 
   canvas.classList.add('ready');
+  document.body.classList.add('ready');
 }
 
 init();
