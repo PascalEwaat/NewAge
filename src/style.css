@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #f4f4f2;
+}
+
+.dots {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, #d9d9d6 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+#scene.ready { opacity: 1; }
+#scene.hovering { cursor: pointer; }
