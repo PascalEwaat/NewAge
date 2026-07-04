@@ -87,16 +87,16 @@ body.ready .overlay { opacity: 1; }
 }
 
 @media (max-width: 640px) {
-  .title {
-    left: 24px;
-    right: 24px;
-    bottom: 170px;
-    max-width: none;
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 24px;
   }
+  .title,
   .aside {
-    left: 24px;
-    right: 24px;
-    bottom: 28px;
+    position: static;
     max-width: none;
   }
 }
