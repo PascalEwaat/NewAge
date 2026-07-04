@@ -39,9 +39,9 @@ body.ready .overlay { opacity: 1; }
   position: absolute;
   left: 40px;
   bottom: 36px;
-  max-width: 340px;
-  font-family: 'Fraunces', serif;
-  font-size: 28px;
+  max-width: 420px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 40px;
   font-weight: 400;
   line-height: 1.25;
   color: #1f1e1c;
