@@ -35,6 +35,7 @@ function resize(field) {
 async function init() {
   const entries = await loadTextures();
   const field = new FlowField(scene, entries, reducedMotion);
+  window.__spring = { field, scene };
   resize(field);
   window.addEventListener('resize', () => resize(field));
 
