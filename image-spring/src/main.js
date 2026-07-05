@@ -50,8 +50,18 @@ async function init() {
     canvas.classList.toggle('hovering', !!hit);
   });
 
-  window.addEventListener('click', (e) => {
+  // Pointer events instead of 'click': Safari never synthesizes click for
+  // taps on non-clickable elements like this canvas.
+  let downX = 0;
+  let downY = 0;
+  window.addEventListener('pointerdown', (e) => {
+    downX = e.clientX;
+    downY = e.clientY;
+  });
+
+  window.addEventListener('pointerup', (e) => {
     if (e.target.closest('.overlay')) return;
+    if (Math.hypot(e.clientX - downX, e.clientY - downY) > 12) return;
     pointerToNdc(e);
     raycaster.setFromCamera(pointer, camera);
     const hit = raycaster.intersectObjects(field.meshes())[0];

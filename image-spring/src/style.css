@@ -20,6 +20,8 @@ html, body {
   height: 100%;
   opacity: 0;
   transition: opacity 1.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #scene.ready { opacity: 1; }
